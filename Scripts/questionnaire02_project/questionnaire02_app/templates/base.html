@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}问卷PC端展示{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css">
+    <style>
+    .post {
+        margin-bottom: 5px;
+    }
+    </style>
+  </head>
+
+  <body>
+	<div class="container head">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/">问卷PC端展示</a>
+        </nav>
+<!--        <div class="jumbotron">-->
+<!--            <h1 class="display-6">游客行游记</h1>-->
+<!--            <p class="lead">天青色等烟雨，而我在等你</p>-->
+<!--        </div>-->
+	</div>
+	<div class="container main">
+        <div class="row">
+            <div class="col-9 post-list">
+            {% block main %}
+            {% endblock %}
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        {% block footer %}
+        <div class="container">
+            <hr/>
+        </div>
+        <div class="container power">
+            <span class="text-muted">遇见更好的自己，无论今天风雪雷鸣，咫尺一心为前行</span>
+        </div>
+        {% endblock %}
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "./base.html" %}
+
+{% block main %}
+    {% for post in question_list %}
+    <div class="card post">
+        <div class="card-body">
+            <h5 class="card-title"><a href="#">{{ post.id }}、{{ post.title }}</a></h5>
+             <span class="card-choice">选项:
+                 <li>{{ post.choice_one }}</li>
+                 <li>{{ post.choice_two }}</li>
+                 <li>{{ post.choice_three }}</li>
+                 <li>{{ post.choice_four }}</li>
+            </span>
+            <hr/>
+        </div>
+    </div>
+    {% endfor %}
+
+<!--    {% if page_obj %}-->
+<!--        {% if page_obj.has_previous %}-->
+<!--            <a href="?page={{ page_obj.previous_page_number }}">上一页</a>-->
+<!--        {% endif %}-->
+<!--            Page {{ page_obj.number }} of {{ paginator.num_pages }}.-->
+<!--        {% if page_obj.has_next %}-->
+<!--            <a href="?page={{ page_obj.next_page_number }}">下一页</a>-->
+<!--        {% endif %}-->
+<!--    {% endif %}-->
+
+{% endblock %}

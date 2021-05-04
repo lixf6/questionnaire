@@ -15,7 +15,15 @@
   <body>
 	<div class="container head">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="/">问卷PC端展示</a>
+<!--          <a class="navbar-brand" href="/">-->
+              <div class="container power text-center">
+                  <span class="text-muted">
+<!--                      <h5>{% block headTitle %}问卷PC端展示{% endblock %}</h5>-->
+<!--                      <h3>{% block headIntroduction %}问卷PC端展示{% endblock %}</h3>-->
+                      {% block head %}问卷PC端展示{% endblock %}
+                  </span>
+              </div>
+<!--          </a>-->
         </nav>
 <!--        <div class="jumbotron">-->
 <!--            <h1 class="display-6">游客行游记</h1>-->
@@ -24,7 +32,7 @@
 	</div>
 	<div class="container main">
         <div class="row">
-            <div class="col-9 post-list">
+            <div class="col-12 post-list">
             {% block main %}
             {% endblock %}
             </div>
@@ -37,8 +45,10 @@
         <div class="container">
             <hr/>
         </div>
-        <div class="container power">
-            <span class="text-muted">遇见更好的自己，无论今天风雪雷鸣，咫尺一心为前行</span>
+        <div class="container power text-center">
+            <span class="text-muted">
+                遇见更好的自己，无论今天风雪雷鸣，咫尺一心为前行
+            </span>
         </div>
         {% endblock %}
     </footer>

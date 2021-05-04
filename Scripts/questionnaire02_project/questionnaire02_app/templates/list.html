@@ -1,5 +1,19 @@
 {% extends "./base.html" %}
 
+
+{% block head %}
+    {% for questionTitle in questionTitle_list %}
+<!--        {% if  questionTitle %}-->
+            <h3>{{ questionTitle.title }}</h3>
+            <h5>{{ questionTitle.introduction }}</h5>
+<!--        {% endif %}-->
+    {% endfor %}
+
+{% endblock %}
+
+
+
+
 {% block main %}
     {% for post in question_list %}
     <div class="card post">

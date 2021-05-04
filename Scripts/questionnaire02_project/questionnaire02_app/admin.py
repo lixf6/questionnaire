@@ -12,14 +12,13 @@ from .models import Question, QuestionTitle
 class QuestionAdmin(admin.ModelAdmin):
     """后台问卷设置栏，admin/路径下"""
     list_display = [
-        'title', 'created_time'
-        # , 'operator'
+        'title', 'created_time', 'question_count'
     ]
 
     list_filter = ['title', ]
 
     # 搜索栏中支持搜索字段
-    search_fields = ['title', 'category_name']
+    search_fields = ['title']
 
     # actions_on_top = True
     # actions_on_bottom = True
@@ -27,7 +26,6 @@ class QuestionAdmin(admin.ModelAdmin):
     # 编辑页面
     save_on_top = True
 
-    # exclude = ['owner']
     fields = (
         # ('category', 'title'),
         'title',
@@ -41,10 +39,15 @@ class QuestionAdmin(admin.ModelAdmin):
     # def operator(self, obj):
     #     return format_html(
     #         '<a href="{}">编辑</a>',
-    #         # reverse('admin:blog_post_change', args=(obj.id,))
-    #     )
 
+    #     )
     # operator.short_description = '操作'
+
+    def question_count(self, obj):
+        """文章总数计数返回"""
+        return 1  # 这里先占个位置，默认为1，后面需要更新统计值
+    # 列表展示字段，该目录下对应文章字段展示名称
+    question_count.short_description = "文章数量"
 
     # def save_model(self, request, obj, form, change):
     #     obj.owner = request.user

@@ -15,29 +15,29 @@
 
 
 {% block main %}
+
+<form action="{% url 'answer_input' %}" method="post">
+    {% csrf_token %}
     {% for post in question_list %}
     <div class="card post">
         <div class="card-body">
             <h5 class="card-title"><a href="#">{{ post.id }}、{{ post.title }}</a></h5>
-             <span class="card-choice">选项:
-                 <li>{{ post.choice_one }}</li>
-                 <li>{{ post.choice_two }}</li>
-                 <li>{{ post.choice_three }}</li>
-                 <li>{{ post.choice_four }}</li>
+             <span class="card-choice">
+                 <input type="radio" name="question{{ post.id }}_choice" id="" value="choice_one" required="required"><label style="margin-right: 35px">{{ post.choice_one }}</label>
+                 <input type="radio" name="question{{ post.id }}_choice" id="" value="choice_two" required="required"><label style="margin-right: 35px">{{ post.choice_two }}</label>
+                 <input type="radio" name="question{{ post.id }}_choice" id="" value="choice_three" required="required"><label style="margin-right: 35px">{{ post.choice_three }}</label>
+                 <input type="radio" name="question{{ post.id }}_choice" id="" value="choice_four" required="required"><label style="margin-right: 35px">{{ post.choice_four }}</label>
             </span>
             <hr/>
         </div>
     </div>
     {% endfor %}
-
-<!--    {% if page_obj %}-->
-<!--        {% if page_obj.has_previous %}-->
-<!--            <a href="?page={{ page_obj.previous_page_number }}">上一页</a>-->
-<!--        {% endif %}-->
-<!--            Page {{ page_obj.number }} of {{ paginator.num_pages }}.-->
-<!--        {% if page_obj.has_next %}-->
-<!--            <a href="?page={{ page_obj.next_page_number }}">下一页</a>-->
-<!--        {% endif %}-->
-<!--    {% endif %}-->
+<!--    <input type="submit" onclick="return alert('您已经提交成功了~')" value="提交问卷"/>-->
+    <input type="submit" onclick="javascript:
+                                  if tip{
+                                    alert('您已经提交成功了~')
+                                  }
+                                  " value="提交问卷"/>
+</form>
 
 {% endblock %}

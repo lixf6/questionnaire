@@ -50,7 +50,7 @@ class Answer(models.Model):
     class Meta:
         """它的作用是配置 Model属性，比如 Question 这个
         Model 通过 Meta 配置它的展示名称为调查问卷，排序规 是根据 id 降序排列"""
-        verbose_name = verbose_name_plural = "调查问卷-用户提交信息"
+        verbose_name = verbose_name_plural = "调查问卷-用户提交问卷结果页"
         # ordering = ['-id']
 
     def __str__(self):

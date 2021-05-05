@@ -23,6 +23,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from questionnaire02_app.views import base, answer_input
 
@@ -31,4 +33,4 @@ urlpatterns = [
     url(r'^answer_input/', answer_input, name='answer_input'),
     url(r'^$', base, name='base'),
     path('admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

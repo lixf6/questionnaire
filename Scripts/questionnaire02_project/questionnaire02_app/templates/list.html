@@ -16,7 +16,7 @@
 
 {% block main %}
 
-<form action="{% url 'answer_input' %}" method="post">
+<form id="contact-form" action="{% url 'answer_input' %}" method="post">
     {% csrf_token %}
     {% for post in question_list %}
     <div class="card post">
@@ -33,11 +33,8 @@
     </div>
     {% endfor %}
 <!--    <input type="submit" onclick="return alert('您已经提交成功了~')" value="提交问卷"/>-->
-    <input type="submit" onclick="javascript:
-                                  if tip{
-                                    alert('您已经提交成功了~')
-                                  }
-                                  " value="提交问卷"/>
+    <input type="submit" value="提交问卷"/>
 </form>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js">$("#contact-form").submit(_=> alert("You have successfully submitted"));</script>
 
 {% endblock %}

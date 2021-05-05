@@ -18,8 +18,8 @@ class Question(models.Model):
         verbose_name = verbose_name_plural = "调查问卷-题目设置（目前只单选）"
         # ordering = ['-id']
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
 
 
 class QuestionTitle(models.Model):
@@ -54,4 +54,4 @@ class Answer(models.Model):
         # ordering = ['-id']
 
     def __str__(self):
-        return self.title
+        return self.body

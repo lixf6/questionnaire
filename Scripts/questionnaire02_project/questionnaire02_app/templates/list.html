@@ -35,6 +35,11 @@
 <!--    <input type="submit" onclick="return alert('您已经提交成功了~')" value="提交问卷"/>-->
     <input type="submit" value="提交问卷"/>
 </form>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js">$("#contact-form").submit(_=> alert("You have successfully submitted"));</script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		        <script>
+		            $(function(){
+		                $("#contact-form").submit(_=> alert("You have successfully submitted"));
+		            });
+		        </script>
 
 {% endblock %}
